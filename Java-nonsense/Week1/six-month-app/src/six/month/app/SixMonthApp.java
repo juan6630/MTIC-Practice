@@ -32,6 +32,7 @@ public class SixMonthApp {
         float[] solution1 = new float[2];
         float[] total_mes = new float[meses];
         float[] solution2 = new float[2];
+        float[] mayor_valor = new float[3];
         
         for(int i=0; i<sucursales; i++){
             for(int j=0; j<meses; j++){
@@ -56,7 +57,7 @@ public class SixMonthApp {
                 solution1[1] = total_personas[i];
             }
         }
-        System.out.printf("La sucursal con mayor ingreso de personas fue %5.0f%n con %5.1f%n comensales", solution1[0]+1,solution1[1]);
+        System.out.printf("La sucursal con mayor ingreso de personas fue %5.0f con %5.1f comensales%n", solution1[0]+1,solution1[1]);
         
         //Mes con menor cantidad de comensales P2
         for(int i=0;i<meses;i++){
@@ -74,7 +75,20 @@ public class SixMonthApp {
             }
         }
         //TODO número del mes a palabra
-        System.out.printf("El mes con menor cantidad de comensales fue %1.0f%n con %5.1f%n comensales", solution2[0]+1,solution2[1]);
+        System.out.printf("El mes con menor cantidad de comensales fue %1.0f con %5.1f comensales%n", solution2[0]+1,solution2[1]);
+        
+        //Valor más alto y en que sucursal y mes fue
+        mayor_valor[0] = 0;
+        for(int i=0;i<sucursales;i++){
+            for(int j=0;j<meses;j++){
+                if(matrix[i][j] > mayor_valor[0]){
+                    mayor_valor[0] = matrix[i][j];
+                    mayor_valor[1] = i+1;
+                    mayor_valor[2] = j+1;
+                }
+            }
+        }
+        System.out.printf("El mayor número de asistentes fue %1.0f en la sucursal %1.0f y el mes %1.0f%n", mayor_valor[0], mayor_valor[1], mayor_valor[2]);
         
     }
     
