@@ -16,7 +16,7 @@ public class Usuario {
     public int edad;
     public String area;
     public boolean es_jefe;
-    public double nomina;
+    public double nomina, nominaf;
     
     public Usuario(String name, int id, String mail, int age, String field, boolean is_boss){
         nombre = name;
@@ -26,23 +26,6 @@ public class Usuario {
         area = field;
         es_jefe = is_boss;
 
-//        switch(area)
-//        {
-//            case "desarrollo":
-//                nomina = 4500000;
-//                if(es_jefe){
-//                    nomina = nomina + 2500000;
-//                }
-////                break;
-//            case "administrativa":
-//                nomina = 3500000;
-//                if(es_jefe){
-//                    nomina += 3000000;
-//                }
-////                break;
-//            default:
-//                break;
-//        }
 
         if(area == "desarrollo"){
             if(es_jefe){
@@ -72,7 +55,7 @@ public class Usuario {
         System.out.println("Identificacion: " + identificacion);
         System.out.println("Email: " + email);
         System.out.println("Edad: " + edad);
-        System.out.println("Área: " + area);
+        System.out.println("Area: " + area);
         System.out.println("Salario: " + nomina);
     }
 }
